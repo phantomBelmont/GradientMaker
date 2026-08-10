@@ -1,0 +1,387 @@
+
+        :root {
+            --primary: #2563eb;
+            --bg: transparent;
+            --card: transparent;
+            --text: #ddd;
+            --border: #e5e7eb;
+            --primary: #ffff00bb
+        }
+*,*::before,::after{
+            box-sizing: border-box;
+        }
+        /* 全体のリセット */
+        html{
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            min-height: 100dvh;
+            width: 100%;
+        }
+    
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: block; 
+            min-height: 100vh;
+        }
+        
+        .nice-push{
+            display: inline-block; 
+            border-width: 3px;
+            padding: 8px 16px; 
+            margin: 5px;
+            width:auto;
+            text-align: center;
+            border-radius:8px;
+            cursor: pointer;
+            vertical-align: middle;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s ease-in-out,
+            will-change: transform, box-shadow;
+        }
+        
+        .nice-push:active {
+            transform: scale(0.95) translateY(2px);
+        }
+        
+        .green-btn{
+            background-color: transparent;
+            color: #00aa00;
+            border-color: #00aa00;
+        } 
+        .green-btn:hover{
+            background-color: rgba(77,77,77,0.2);
+        }
+        .yellow-btn{
+            background-color: transparent;
+            color:#aabf00;
+            border-color: #aabf00;
+        }
+        .yellow-btn:hover {
+            background-color: rgba(77,77,77,0.2);
+        }
+
+        .red-btn {
+            background-color: transparent;
+            color: #a00;
+            border-color: #a00;
+        }
+        .red-btn:hover {
+            background-color: rgba(77,77,77,0.2);
+        }
+        .purple-btn{
+            background-color: transparent;
+            color: #9000FF;
+            border-color: #9000FF;
+        }
+        .purple-btn:hover {
+            background-color: rgba(77,77,77,0.2);
+        }
+        .blue-btn{
+            background-color: transparent;
+            color:#0095FF;
+            border-color: #0095FF;
+        }
+        .yellow-btn:hover {
+            background-color: rgba(77,77,77,0.2);
+        }
+
+        .container {
+            background-color: var(--card);
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto; /* 中央寄せ */
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            
+            /* Grid レイアウトへ変更 */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* スマホ対応：1列に */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h1 {
+            grid-column: 1 / -1; /* 全列を跨ぐ */
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        /* プレビューエリア */
+        .preview-area {
+            background: transparent;
+            border-radius: 12px;
+            height: 300px;
+            
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--border);
+        }
+
+        #gradientBox {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transition: background 0.1s;
+        }
+
+        /* コントロールエリア */
+        .controls {
+            display: block; 
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .control-group {
+            background: transparent;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .control-group h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: block;
+        }
+
+        /* タイプ切り替えボタン */
+        .type-switch {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .type-btn {
+            padding: 10px;
+            border: 2px solid var(--border);
+            background: transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+            text-align: center;
+            color:#0DF3FF70;
+        }
+
+        .type-btn.active {
+            background-color: #9000FF70;
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .copy-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .copy-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .css-output {
+            background: transparent;
+            color: #a5f3fc;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            word-break: break-all;
+            margin-top: 15px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+
+        /* ドラッグ＆ドロップ用スタイル */
+        .color-row {
+            display: grid;
+            grid-template-columns: 30px 50px 1fr 30px; /* 並べ替えハンドル, 色, 透明度, 削除 */
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 12px;
+            background: transparent;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .color-row.dragging {
+            opacity: 0.5;
+            border: 2px dashed var(--primary);
+        }
+
+        .color-row .drag-handle {
+            cursor: grab;
+            color: #9ca3af;
+            font-size: 1.2rem;
+            user-select: none;
+            
+        }
+        
+        .color-picker-wrapper {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        input[type="color"] {
+            width: 150%;
+            height: 150%;
+            position: absolute;
+            top: -25%;
+            left: -25%;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .opacity-control {
+            display: block;
+            gap: 2px;
+        }
+        
+        .opacity-label {
+            font-size: 0.75rem;
+            color: #aaffaabb;
+        }
+
+        .remove-btn {
+            background: transparent;
+            color: #ef4444;
+            border: none;
+            border-radius: 4px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+        
+        }
+
+        .remove-btn:hover {
+            background: #fecaca;
+        }
+
+        /* ダウンロードコントロール用スタイル */
+        .download-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            align-items: end;
+            margin-top: 10px;
+        }
+
+        .download-controls input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-align: center;
+            background: transparent;
+            color: #ddd;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .download-controls input:focus{
+            border-color: #aaffaa ;
+    box-shadow: 
+        0 0 0 2px #aaffaa, 
+        0 0 30px rgba(170, 255, 170, 0.4) ;
+}
+        }
+
+        .download-btn {
+            background-color: #070;
+            color: #ddd;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        .download-btn:hover {
+            background-color: #059669;
+        }
+        
+    
+
+        .stars{
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top:0; left:0;
+            z-index: 100;
+            pointer-events: none;
+
+            background-size: 200px 200px;
+            background-image: radial-gradient(2px 2px at 50px 50px, orange, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 20px 20px, rgb(3, 238, 3), rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 10px 30px, pink, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 150px 120px, aqua, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 120px 150px, white, rgba(0,0,0,0));
+            background-repeat: repeat;
+
+            animation: moveDiagonal 5s ease-in-out infinite, twinkle 2s ease-in-out infinite;
+            will-change:opacity;
+        }
+            @keyframes moveDiagonal{
+                from{background-position: 0 0;}
+                to{background-position: 200px 200px;}
+            }
+            @keyframes twinkle{
+                0%,100%{opacity:1;} 50%{opacity: 0.2;}
+            }
