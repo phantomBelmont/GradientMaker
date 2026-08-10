@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    リ作成時のHTML
+×
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" 
+    content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self';
+        img-src 'self' data: https:;
+        font-src 'self' data:;
+        connect-src 'self';
+        base-uri 'self';
+        form-action 'self';
+        worker-src 'self';
+        upgrade-insecure-requests;
+        block-all-mixed-content;
+    ">
+    
+    <title>Gradient Generator (Block & Grid)</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars"></div>
+
+<div class="container">
+    <h1>🎨 Gradient Generator</h1>
+
+    <div class="preview-area">
+        <div id="gradientBox"></div>
+        <span id="previewText">Preview</span>
+    </div>
+
+    <div class="controls">
+        <div class="type-switch">
+            <button class="type-btn active" id="btnLinear">Linear</button>
+            <button class="type-btn" id="btnRadial" >Radial</button>
+        </div>
+
+        <div id="linearControls">
+            <div class="control-group">
+                <h3>Linear Gradient Settings</h3>
+                <label>Angle: <span id="angleValue">180</span>deg</label>
+                <input type="range" id="angle" min="0" max="360" value="180" oninput="updateGradient()">
+            </div>
+        </div>
+
+        <div id="radialControls" class="hidden">
+            <div class="control-group">
+                <h3>Radial Gradient Settings</h3>
+                <label>Position (X): <span id="posXValue">50</span>%</label>
+                <input type="range" id="posX" min="0" max="100" value="50" oninput="updateGradient()">
+                
+                <label>Position (Y): <span id="posYValue">50</span>%</label>
+                <input type="range" id="posY" min="0" max="100" value="50" oninput="updateGradient()">
+                
+                <label>Size (Radius): <span id="sizeValue">50</span>%</label>
+                <input type="range" id="size" min="10" max="200" value="50" oninput="updateGradient()">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <h3>Colors (Drag to reorder!)</h3>
+            <div id="colorInputs">
+                <!-- JS で動的に追加される -->
+            </div>
+            <button class="purple-btn nice-push">+ Color Stop を追加</button>
+        </div>
+
+        <div class="control-group">
+            <h3>Download Image</h3>
+            <div class="download-controls">
+                <div>
+                    <label>Width (px)</label>
+                    <input type="number" id="imgWidth" value="1920" min="100" max="4096">
+                </div>
+                <div>
+                    <label>Height (px)</label>
+                    <input type="number" id="imgHeight" value="1080" min="100" max="4096">
+                </div>
+                <button class="green-btn nice-push" >⬇️ ダウンロード</button>
+            </div>
+        </div>
+
+        <div class="css-output" id="cssCode">
+        </div>
+        
+        <button class="blue-btn nice-push">CSS コードをコピー</button>
+    </div>
+</div>
+
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
