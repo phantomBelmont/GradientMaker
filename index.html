@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <meta http-equiv="Content-Security-Policy"
-  
-    content= "default-src 'self'; 
-    script-src 'self'; 
-    style-src 'self'; 
-    img-src 'self' data: https:; 
-    font-src 'self' data:; 
-    connect-src 'self'; 
-    base-uri 'self'; 
-    form-action 'self'; 
-    manifest-src 'self'; 
-    worker-src 'self'; 
-    frame-ancestors 'self'; 
-    upgrade-insecure-requests
-  ">
-  
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" 
+    content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self';
+        img-src 'self' data: https:;
+        font-src 'self' data:;
+        connect-src 'self';
+        base-uri 'self';
+        form-action 'self';
+        worker-src 'self';
+        upgrade-insecure-requests;
+        block-all-mixed-content;
+    ">
+
     <title>Gradient Generator (Block & Grid)</title>
 
     <link rel="stylesheet" href="style.css">
-
-   <link rel="manifest" href="manifest.json">
-
 </head>
-
-
 <body>
     <div class="stars"></div>
 
@@ -52,7 +48,7 @@
             <div class="control-group">
                 <h3>Linear Gradient Settings</h3>
                 <label>Angle: <span id="angleValue">180</span>deg</label>
-                <input type="range" id="angle" min="0" max="360" value="180" oninput="updateGradient()">
+                <input type="range" id="angle" min="0" max="360" value="180" >
             </div>
         </div>
 
@@ -60,13 +56,13 @@
             <div class="control-group">
                 <h3>Radial Gradient Settings</h3>
                 <label>Position (X): <span id="posXValue">50</span>%</label>
-                <input type="range" id="posX" min="0" max="100" value="50" oninput="updateGradient()">
-                
+                <input type="range" id="posX" min="0" max="100" value="50" >
+
                 <label>Position (Y): <span id="posYValue">50</span>%</label>
-                <input type="range" id="posY" min="0" max="100" value="50" oninput="updateGradient()">
-                
-                <label>Size (Radius): <span id="sizeValue">50</span>%</label>
-                <input type="range" id="size" min="10" max="200" value="50" oninput="updateGradient()">
+                <input type="range" id="posY" min="0" max="100" value="50" >
+
+                <label>Size (Radius): <span id="oninput="updateGradient()"">50</span>%</label>
+                <input type="range" id="size" min="10" max="200" value="50" >
             </div>
         </div>
 
@@ -95,7 +91,7 @@
 
         <div class="css-output" id="cssCode">
         </div>
-        
+
         <button class="blue-btn nice-push">CSS コードをコピー</button>
     </div>
 </div>
