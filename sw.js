@@ -1,4 +1,4 @@
-const gradiCACHE = 'v7';
+const gradiCACHE = 'v8';
 const ASSETS = [
     './',
   './index.html',
