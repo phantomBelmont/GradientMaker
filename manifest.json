@@ -1,5 +1,5 @@
 {
-  "name": "Gradient Maker",
+  "name": "Gradient Generator",
   "short_name": "グラデーションメーカー",
   "start_url": "./index.html",
   "display": "standalone",
