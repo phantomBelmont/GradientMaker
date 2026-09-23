@@ -1,4 +1,3 @@
-
         :root {
             --primary: #2563eb;
             --bg: transparent;
@@ -9,6 +8,7 @@
         }
 *,*::before,::after{
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
         /* 全体のリセット */
         html{
@@ -18,7 +18,7 @@
             min-height: 100dvh;
             width: 100%;
         }
-    
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg);
@@ -28,7 +28,7 @@
             display: block; 
             min-height: 100vh;
         }
-        
+
         .nice-push{
             display: inline-block; 
             border-width: 3px;
@@ -44,11 +44,11 @@
             transition: all 0.2s ease-in-out,
             will-change: transform, box-shadow;
         }
-        
+
         .nice-push:active {
             transform: scale(0.95) translateY(2px);
         }
-        
+
         .green-btn{
             background-color: transparent;
             color: #00aa00;
@@ -99,7 +99,7 @@
             padding: 30px;
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            
+
             /* Grid レイアウトへ変更 */
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -126,7 +126,7 @@
             background: transparent;
             border-radius: 12px;
             height: 300px;
-            
+
             font-weight: bold;
             color: #fff;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -234,7 +234,7 @@
             word-break: break-all;
             margin-top: 15px;
         }
-        
+
         .hidden {
             display: none;
         }
@@ -263,9 +263,9 @@
             color: #9ca3af;
             font-size: 1.2rem;
             user-select: none;
-            
+
         }
-        
+
         .color-picker-wrapper {
             position: relative;
             width: 100%;
@@ -290,7 +290,7 @@
             display: block;
             gap: 2px;
         }
-        
+
         .opacity-label {
             font-size: 0.75rem;
             color: #aaffaabb;
@@ -306,7 +306,7 @@
             cursor: pointer;
             font-weight: bold;
             font-size: 1rem;
-        
+
         }
 
         .remove-btn:hover {
@@ -356,32 +356,4 @@
         .download-btn:hover {
             background-color: #059669;
         }
-        
-    
 
-        .stars{
-            position: fixed;
-            height: 100%;
-            width: 100%;
-            top:0; left:0;
-            z-index: 100;
-            pointer-events: none;
-
-            background-size: 200px 200px;
-            background-image: radial-gradient(2px 2px at 50px 50px, orange, rgba(0,0,0,0)),
-            radial-gradient(2px 2px at 20px 20px, rgb(3, 238, 3), rgba(0,0,0,0)),
-            radial-gradient(2px 2px at 10px 30px, pink, rgba(0,0,0,0)),
-            radial-gradient(2px 2px at 150px 120px, aqua, rgba(0,0,0,0)),
-            radial-gradient(2px 2px at 120px 150px, white, rgba(0,0,0,0));
-            background-repeat: repeat;
-
-            animation: moveDiagonal 5s ease-in-out infinite, twinkle 2s ease-in-out infinite;
-            will-change:opacity;
-        }
-            @keyframes moveDiagonal{
-                from{background-position: 0 0;}
-                to{background-position: 200px 200px;}
-            }
-            @keyframes twinkle{
-                0%,100%{opacity:1;} 50%{opacity: 0.2;}
-            }
