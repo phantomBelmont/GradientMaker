@@ -1,12 +1,11 @@
-const gradiCACHE = 'v6';
+const gradiCACHE = 'v7';
 const ASSETS = [
-  './',
-  './index.html',
-  './script.js',
-  './style.css',
-  './manifest.json',
-  './icon512.png',
-  './icon192.png'
+  'index.html',
+  'script.js',
+  'style.css',
+  'manifest.json',
+  'icon512.png',
+  'icon192.png'
 ];
 
 self.addEventListener(
